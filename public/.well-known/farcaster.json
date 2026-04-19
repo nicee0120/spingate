@@ -1,1 +1,17 @@
-{}
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "SpinGate",
+    "iconUrl": "https://spingate.vercel.app/icon.png",
+    "homeUrl": "https://spingate.vercel.app",
+    "imageUrl": "https://spingate.vercel.app/og.png",
+    "buttonTitle": "Spin to Win!",
+    "splashImageUrl": "https://spingate.vercel.app/splash.png",
+    "splashBackgroundColor": "#0a0e1a"
+  }
+}
