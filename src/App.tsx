@@ -33,14 +33,14 @@ export default function App() {
   const [result, setResult] = useState<typeof REWARDS[0] | null>(null)
   const [spinCount, setSpinCount] = useState(0)
   const [txHash, setTxHash] = useState<string | null>(null)
-  const [isReady, setIsReady] = useState(false)
+  // ready state removed
   const [account, setAccount] = useState<string | null>(null)
   const wheelRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     async function init() {
       await sdk.actions.ready()
-      setIsReady(true)
+      // setIsReady(true)
     }
     init()
   }, [])
@@ -65,7 +65,7 @@ export default function App() {
         .map(b => b.toString(16).padStart(2, '0')).join('')
       const tx = await provider.request({
         method: 'eth_sendTransaction',
-        params: [{ from: account, to: account, value: '0x0', data: hex, chainId: '0x2105' }]
+        params: [{ from: account as `0x${string}`, to: account as `0x${string}`, value: '0x0', data: hex, chainId: '0x2105' }]
       }) as string
       setTxHash(tx)
     } catch (e) {
